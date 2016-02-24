@@ -1,5 +1,4 @@
-# Statistical Inference: Part 1
-Simulation
+Regression Models Course Project
 ==========================================
 #### Atit Doctor
 ##### February 24, 2016
@@ -59,7 +58,7 @@ First, we fit the full model as the following.
 
 ```{r, results='hide'}
 fullModel <- lm(mpg ~ ., data=mtcars)
-summary(fullModel) # results hidden
+summary(fullModel) 
 ```  
 
 This model has the Residual standard error as 2.833 on 15 degrees of freedom. And the Adjusted R-squared value is 0.779
@@ -70,7 +69,7 @@ Now, we use backward selection to select some statistically significant variable
 
 ```{r, results='hide'}
 stepModel <- step(fullModel, k=log(nrow(mtcars)))
-summary(stepModel) # results hidden
+summary(stepModel)
 ```  
 
 This model is "mpg ~ wt + qsec + am". It has the Residual standard error as 2.459 on 28 degrees of freedom. And the Adjusted R-squared value is 0.8336, and this means that the model can explain about 83% of the variance of the MPG variable. All of the coefficients are significant at 0.05 significant level.    
@@ -79,7 +78,7 @@ Please refer to the **Appendix: Figures** section for the plots again. According
 
 ```{r, results='hide'}
 amIntWtModel<-lm(mpg ~ wt + qsec + am + wt:am, data=mtcars)
-summary(amIntWtModel) # results hidden
+summary(amIntWtModel) 
 ```  
 
 This model has the Residual standard error as 2.084 on 27 degrees of freedom. And the Adjusted R-squared value is 0.8804, which means that the model can explain about 88% of the variance of the MPG variable. All of the coefficients are significant at 0.05 significant level. This model is by far the most explanatory one.  
@@ -88,18 +87,18 @@ Next, we fit the simple model with MPG as the outcome variable and Transmission 
 
 ```{r, results='hide'}
 amModel<-lm(mpg ~ am, data=mtcars)
-summary(amModel) # results hidden
+summary(amModel)
 ```  
 
 It shows that on average, a car has 17.147 mpg with automatic transmission, and if it is manual transmission, it increases by 7.2 mpg. 
 
 This model has the Residual standard error as 4.902 on 30 degrees of freedom. And the Adjusted R-squared value is 0.3385, which means that the model can explain about 34% of the variance of the MPG variable. The low Adjusted R-squared value also indicates that we need to add other variables to the model.  
 
-Lastly, we select the final model.  
+Final Model,  
 
 ```{r, results='hide'}
 anova(amModel, stepModel, fullModel, amIntWtModel) 
-confint(amIntWtModel) # results hidden
+confint(amIntWtModel)
 ```  
 
 We end up selecting the model with the highest Adjusted R-squared value, "mpg ~ wt + qsec + am + wt:am".  
@@ -144,7 +143,7 @@ boxplot(mpg ~ am, xlab="Transmission (1 = Manual, 0 = Automatic)", ylab="MPG",
 2. Pair Graph of Motor Trend Car Road Tests  
 
 ```{r}
-pairs(mtcars, panel=panel.smooth, main="Pair Graph of Motor Trend Car Road Tests")
+pairs(mtcars, panel=panel.smooth, main="Pair Graph (Motor Trend Car Road Tests)")
 ```  
 
 3. Scatter Plot of MPG vs. Weight by Transmission  
