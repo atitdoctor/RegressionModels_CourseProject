@@ -9,11 +9,13 @@ Regression Models Course Project - Effects of automatic/manual transmission on M
 This project has been performed to fulfil the requirements for the course Regression Models offered by the Johns Hopkins University on Coursera. In this project, we will analyze the mtcars data set and explore the relationship between a set of variables and miles per gallon (MPG).
 
 The main objectives of this research are as follows
+
 * Is an automatic or manual transmission better for MPG?
 * Quantifying how different is the MPG between automatic and manual transmissions?
 
 
 The key takeaways from the analysis will be
+
 * Manual transmission is better for MPG by a factor of 1.8 compared to automatic transmission.
 * Means and medians for automatic and manual transmission cars are significantly different.
 
