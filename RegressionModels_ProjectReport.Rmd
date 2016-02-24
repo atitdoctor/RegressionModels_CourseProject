@@ -1,5 +1,4 @@
-# Statistical Inference: Part 1
-Simulation
+# Regression Models Course Project
 ==========================================
 #### Atit Doctor
 ##### February 24, 2016
